@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/Wallpapers/wallpapers.css">
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="images/Logo.png" alt="logo">
+        <nav>
+            <ul class="nav__links">
+                <li><a href="index.html" onclick="">Home</a></li>
+                <li><a href="wallpapers.html" onclick="">Wallpapers</a></li>
+                <li><a href="#" onclick="">Facts</a></li>
+                <li><a href="sources.html" onclick="">Sources</a></li>
+            </ul>
+        </nav>
+        <a class="cta" href="contact.html" onclick=""><button>Contact</button></a>
+    </header>
+    <div style="text-align:center">
+        <h2 style="color:white">Planets Gallery</h2>
+        <p style="color:white">Click on the images to view the planets in a maximized view:</p>
+    </div>
+
+    <!-- The four columns -->
+    <div class="row">
+        <div class="column">
+            <img src="/images/Planet.jpg" alt="Lunar Eclipse" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="/images/Moon.jpg" alt="Total Lunar Eclipse" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="/images/galaxy.jpg" alt="Galaxy" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="/images/Jupiter2.jpg" alt="Jupiter" style="width:100%" onclick="myFunction(this);">
+        </div>
+    </div>
+
+    <div class="container">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+        <img id="expandedImg" style="width:100%">
+        <div id="imgtext"></div>
+    </div>
+    <script src="Wallpapers/wallpaper.js"></script>
+</body>
+
+</html>

@@ -1,111 +1,146 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial;
-            background-color: darkslategray;
-        }
-
-        /* The grid: Four equal columns that floats next to each other */
-        .column {
-            float: left;
-            width: 25%;
-            padding: 10px;
-        }
-
-        /* Style the images inside the grid */
-        .column img {
-            opacity: 0.8;
-            cursor: pointer;
-        }
-
-        .column img:hover {
-            opacity: 1;
-        }
-
-        /* Clear floats after the columns */
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-
-        /* The expanding image container */
-        .container {
-            position: relative;
-            display: none;
-            background-color: darkslategray;
-        }
-
-        /* Expanding image text */
-        #imgtext {
-            position: absolute;
-            bottom: 15px;
-            left: 15px;
-            color: white;
-            font-size: 20px;
-
-        }
-
-        /* Closable button inside the expanded image */
-        .closebtn {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            color: white;
-            font-size: 35px;
-            cursor: pointer;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simply Space</title>
+    <link rel="stylesheet" href="index.css">
 </head>
-
 <body>
+    <header>
+        <img class="logo" src="images/Logo.png" alt="logo">
+        <nav>
+            <ul class="nav__links">
+                <li><a href="index.html" onclick="">Home</a></li>
+                <li><a href="wallpapers.html" onclick="">Wallpapers</a></li>
+                <li><a href="#" onclick="">Facts</a></li>
+                <li><a href="sources.html" onclick="">Sources</a></li>
+            </ul>
+        </nav>
+        <a class="cta" href="contact.html" onclick=""><button>Contact</button></a>
+    </header>
+    <h1>Learn about the planets in our solar system</h1>
+    <h2>Somewhere, something incredible is waiting to be known.</h2>
 
-    <div style="text-align:center">
-        <h2 style="color:white">Planets Gallery</h2>
-        <p style="color:white">Click on the images to view the planets in a maximized view:</p>
+    <div class="media-scroller snaps-inline">
+        <div class="media-element">
+          <img class="planeticon" onclick="openPopup()" src="images/Ellipse 1.png" alt="A simple vector illustration of the planet Sun">
+          <p class="title">Sun</p>
+        </div>
+        <div class="media-element">
+          <img class="planeticon" onclick="openPopup()" src="images/Ellipse 1-1.png" alt="A simple vector illustration of the planet Mercury">
+          <p class="title">Mercury</p>
+        </div>
+        <div class="media-element">
+          <img class="planeticon" onclick="openPopup()" src="images/Ellipse 1-2.png" alt="A simple vector illustration of the planet Venus">
+          <p class="title">Venus</p>
+        </div>
+        <div class="media-element">
+          <img class="planeticon" onclick="openPopup()" src="images/Ellipse 1-3.png" alt="A simple vector illustration of the planet Earth">
+          <p class="title">Earth</p>
+        </div>
+        <div class="media-element">
+          <img class="planeticon" onclick="openPopup()" src="images/Ellipse 1-4.png" alt="A simple vector illustration of the planet Mars">
+          <p class="title">Mars</p>
+        </div>
+        <div class="media-element">
+          <img class="planeticon" onclick="openPopup()" src="images/Ellipse 1-5.png" alt="A simple vector illustration of the planet Jupiter">
+          <p class="title">Jupiter</p>
+        </div>
+        <div class="media-element">
+          <img class="planeticon" onclick="openPopup()" src="images/Ellipse 1-6.png" alt="A simple vector illustration of the planet Saturn">
+          <p class="title">Saturn</p>
+        </div>
+        <div class="media-element">
+          <img class="planeticon" onclick="openPopup()" src="images/Ellipse 1-7.png" alt="A simple vector illustration of the planet Uranus">
+          <p class="title">Uranus</p>
+        </div>
+        <div class="media-element">
+          <img class="planeticon" onclick="openPopup()" src="images/Ellipse 1-8.png" alt="A simple vector illustration of the planet Neptune">
+          <p class="title">Neptune</p>
+        </div>
+        <div class="media-element">
+          <img class="planeticon" onclick="openPopup()" src="images/Ellipse 1-9.png" alt="A simple vector illustration of the planet Azeroth">
+          <p class="title">Azeroth</p>
+        </div>
+        <div class="media-element">
+          <img class="planeticon" onclick="openPopup()" src="images/Ellipse 1-10.png" alt="A simple vector illustration of the planet Arda">
+          <p class="title">Arda</p>
+        </div>
+        <div class="media-element">
+          <img class="planeticon" onclick="openPopup()" src="images/Ellipse 1-11.png" alt="A simple vector illustration of the planet HD 189773b">
+          <p class="title">HD 189773b</p>
+        </div>
+        <div class="media-element">
+          <img class="planeticon" onclick="openPopup()" src="images/Ellipse 1-12.png" alt="A simple vector illustration of the planet TOI 849 b">
+          <p class="title">TOI 849 b</p>
+        </div>
+      </div>
+      <div class="popup" id="popup">
+        <img class="sunpic" src="images/Rectangle 3.png"</img>
+        <button type="button" onclick="closePopup()" class="popbnt">Back</button>
     </div>
 
-    <!-- The four columns -->
-    <div class="row">
-        <div class="column">
-            <img src="/images/Planet.jpg" alt="Lunar Eclipse" style="width:100%" onclick="myFunction(this);">
-        </div>
-        <div class="column">
-            <img src="/images/Moon.jpg" alt="Total Lunar Eclipse" style="width:100%" onclick="myFunction(this);">
-        </div>
-        <div class="column">
-            <img src="/images/galaxy.jpg" alt="Galaxy" style="width:100%" onclick="myFunction(this);">
-        </div>
-        <div class="column">
-            <img src="/images/Two planets.png" alt="Jupiter" style="width:100%" onclick="myFunction(this);">
-        </div>
+    <div class="popup" id="popup">
+        <img class="sunpic" src="images/Mercury.jpg"</img>
+        <button type="button" onclick="closePopup()" class="popbnt">Back</button>
     </div>
 
-    <div class="container">
-        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-        <img id="expandedImg" style="width:100%">
-        <div id="imgtext"></div>
+    <div class="popup" id="popup">
+        <img class="sunpic" src="images/Venus.jpg"</img>
+        <button type="button" onclick="closePopup()" class="popbnt">Back</button>
     </div>
 
-    <script>
-        function myFunction(imgs) {
-            var expandImg = document.getElementById("expandedImg");
-            var imgText = document.getElementById("imgtext");
-            expandImg.src = imgs.src;
-            imgText.innerHTML = imgs.alt;
-            expandImg.parentElement.style.display = "block";
-        }
-    </script>
+    <div class="popup" id="popup">
+        <img class="sunpic" src="images/Earth.jpg"</img>
+        <button type="button" onclick="closePopup()" class="popbnt">Back</button>
+    </div>
 
-</body>
+    <div class="popup" id="popup">
+        <img class="sunpic" src="images/Mars.jpg"</img>
+        <button type="button" onclick="closePopup()" class="popbnt">Back</button>
+    </div>
 
+    <div class="popup" id="popup">
+        <img class="sunpic" src="images/Jupiter.jpg"</img>
+        <button type="button" onclick="closePopup()" class="popbnt">Back</button>
+    </div>
+
+    <div class="popup" id="popup">
+        <img class="sunpic" src="images/Saturn.jpg"</img>
+        <button type="button" onclick="closePopup()" class="popbnt">Back</button>
+    </div>
+
+    <div class="popup" id="popup">
+        <img class="sunpic" src="images/Uranus.jpg"</img>
+        <button type="button" onclick="closePopup()" class="popbnt">Back</button>
+    </div>
+
+    <div class="popup" id="popup">
+        <img class="sunpic" src="images/Neptune.jpg"</img>
+        <button type="button" onclick="closePopup()" class="popbnt">Back</button>
+    </div>
+
+    <div class="popup" id="popup">
+        <img class="sunpic" src="images/Azeroth.jpg"</img>
+        <button type="button" onclick="closePopup()" class="popbnt">Back</button>
+    </div>
+
+    <div class="popup" id="popup">
+        <img class="sunpic" src="images/Arda.jpg"</img>
+        <button type="button" onclick="closePopup()" class="popbnt">Back</button>
+    </div>
+
+    <div class="popup" id="popup">
+        <img class="sunpic" src="images/HD 189773b.jpg"</img>
+        <button type="button" onclick="closePopup()" class="popbnt">Back</button>
+    </div>
+
+    <div class="popup" id="popup">
+        <img class="sunpic" src="images/TOI 849 b.jpg"</img>
+        <button type="button" onclick="closePopup()" class="popbnt">Back</button>
+    </div>
+      <script src="index.js"></script>
+    </body>
 </html>
